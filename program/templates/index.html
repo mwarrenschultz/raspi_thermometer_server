@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RaspberryPi Thermometer</title>
+    </head>
+    <body bgcolor='SkyBlue'>
+        <center>
+            <p>The current temp is:</p>
+            <h1 style="color:blue">{{ temp }}°F</h1>
+            <p> </p>
+            <p>Last updated at</p>
+            <h3 id="val">{{ time }}</h3>
+            <img src="https://cdn-learn.adafruit.com/assets/assets/000/003/775/large1024/learn_raspberry_pi_summary.jpg?1396801585" width="400" height="400" alt="Raspberry Pi Thermometer Setup">
+            <p>Raspberry Pi 4 connected to a DS18B20 1-wire temperature sensor</p>
+            <p></p>
+            <p></p>
+            <a href="javascript:location.reload(true)">Refresh</a>
+        </center>
+    <p id="demo"></p>
+    <script>
+var x = {{ temp }};
+if (x >= 80){
+   c='red';
+} else if (x >= 75){
+   c='orange';
+} else if (x >= 72.5){
+   c='green';
+} else if (x >= 70){
+   c='cyan';
+} else if (x >= 65){
+   c='lightblue';
+} else {
+   c='blue';
+}
+document.getElementById('val').style.color = c;
+    </script> 
+    </body>
+</html>  
